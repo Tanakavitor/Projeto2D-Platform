@@ -47,7 +47,9 @@ public class SlimeController : MonoBehaviour
             if (attackTimer <= 0f)
             {
                 attackTimer = attackCooldown;
-                // player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+                PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+                if (playerHealth != null)
+                    playerHealth.TakeDamage(attackDamage);
             }
         }
         else if (distanceToPlayer <= detectionRange)

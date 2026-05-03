@@ -14,12 +14,11 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
-        }
+            SlimeController slime = other.GetComponent<SlimeController>();
+            if (slime != null)
+                slime.TakeDamage(damage);
 
-        if (other.CompareTag("Player"))
-        {
-            return; // ignora o proprio jogador
+            Destroy(gameObject);
         }
     }
 }

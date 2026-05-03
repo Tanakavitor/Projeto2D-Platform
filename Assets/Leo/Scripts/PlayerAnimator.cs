@@ -4,6 +4,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody2D rb;
+    private Vector2 lastDirection = Vector2.down;
 
     void Awake()
     {
@@ -13,8 +14,16 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update()
     {
-        // Atualiza o Speed baseado na velocidade do Rigidbody
-        animator.SetFloat("Speed", rb.linearVelocity.magnitude);
+        Vector2 velocity = rb.linearVelocity;
+        float speed = velocity.magnitude;
+        animator.SetFloat("Speed", speed);
+
+        if (speed > 0.1f)
+        {
+            lastDirection = velocity.normalized;
+            animator.SetFloat("MoveX", lastDirection.x);
+            animator.SetFloat("MoveY", lastDirection.y);
+        }
     }
 
     public void SetAttacking(bool value)
