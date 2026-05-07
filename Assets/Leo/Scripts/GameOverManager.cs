@@ -6,7 +6,7 @@ public class GameOverManager : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("Leo/Scenes/SampleScene");
+        SceneManager.LoadScene("Regiao1");
     }
 
     public void GoToMenu()

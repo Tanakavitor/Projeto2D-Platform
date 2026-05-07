@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 6a7b3acc2a5160dc89bfae0c5c8cc840
+  - enabled: 0
+    path: Assets/Leo/Scenes/SampleScene.unity
+    guid: ca4229862fb69fead9e9cefc8c6b3d4a
+  - enabled: 1
+    path: "Assets/Regi\xF5es/Regi\xE3o1/Regiao1.unity"
+    guid: a80df5e2298ab095b8cd5a6eb821048c
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: a905735148d36ba32b63be07b0052322
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
