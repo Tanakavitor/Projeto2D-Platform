@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -45,7 +46,13 @@ public class PlayerHealth : MonoBehaviour
         playerAnimator.SetDead(true);
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
-        Destroy(gameObject, 1.5f);
+        StartCoroutine(GameOverRoutine());
+    }
+
+    System.Collections.IEnumerator GameOverRoutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("GameOver");
     }
 
     public int GetCurrentHearts()
