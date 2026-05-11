@@ -20,11 +20,11 @@ public class PlayerAttack : MonoBehaviour
         if (attackCooldownTimer > 0)
         {
             attackCooldownTimer -= Time.deltaTime;
-
-            // Reseta a animacao de ataque na metade do cooldown
             if (attackCooldownTimer <= attackCooldown / 2f)
                 playerAnimator.SetAttacking(false);
         }
+
+        if (Time.timeScale == 0f) return; // bloqueado se pausado
 
         if (Input.GetMouseButtonDown(0) && attackCooldownTimer <= 0)
             Shoot();
