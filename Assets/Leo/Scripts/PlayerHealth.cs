@@ -7,6 +7,10 @@ public class PlayerHealth : MonoBehaviour
     public int maxHearts = 3;
     private int currentHearts;
 
+    [Header("Invencibilidade")]
+    public float invincibilityDuration = 1.5f;
+    private bool isInvincible = false;
+
     private PlayerAnimator playerAnimator;
     private bool isDead = false;
 
@@ -18,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (isDead) return;
+        if (isDead || isInvincible) return;
 
         currentHearts -= damage;
 
@@ -35,9 +39,12 @@ public class PlayerHealth : MonoBehaviour
 
     System.Collections.IEnumerator HurtRoutine()
     {
+        isInvincible = true;
         playerAnimator.SetHurt(true);
         yield return new WaitForSeconds(0.3f);
         playerAnimator.SetHurt(false);
+        yield return new WaitForSeconds(invincibilityDuration - 0.3f);
+        isInvincible = false;
     }
 
     void Die()
@@ -59,5 +66,4 @@ public class PlayerHealth : MonoBehaviour
     {
         return currentHearts;
     }
-    
 }

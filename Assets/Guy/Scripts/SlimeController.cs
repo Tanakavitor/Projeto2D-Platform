@@ -5,7 +5,7 @@ public class SlimeController : MonoBehaviour
     [Header("Stats")]
     public float speed = 2f;
     public int maxHP = 3;
-    public float detectionRange = 5f;
+    public float detectionRange = 100f;
     public float attackRange = 0.8f;
     public int attackDamage = 1;
     public float attackCooldown = 1.5f;
@@ -38,7 +38,6 @@ public class SlimeController : MonoBehaviour
 
         if (distanceToPlayer <= attackRange)
         {
-            // Parado e atacando
             moveDirection = Vector2.zero;
             rb.linearVelocity = Vector2.zero;
             animator.SetFloat("Speed", 0f);
@@ -52,9 +51,8 @@ public class SlimeController : MonoBehaviour
                     playerHealth.TakeDamage(attackDamage);
             }
         }
-        else if (distanceToPlayer <= detectionRange)
+        else
         {
-            // Perseguindo o player
             moveDirection = (player.position - transform.position).normalized;
             rb.linearVelocity = moveDirection * speed;
 
@@ -63,13 +61,15 @@ public class SlimeController : MonoBehaviour
             animator.SetFloat("DirY", moveDirection.y);
             animator.SetBool("isAttacking", false);
         }
-        else
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
-            // Parado — fora do range
-            moveDirection = Vector2.zero;
-            rb.linearVelocity = Vector2.zero;
-            animator.SetFloat("Speed", 0f);
-            animator.SetBool("isAttacking", false);
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+                playerHealth.TakeDamage(attackDamage);
         }
     }
 
