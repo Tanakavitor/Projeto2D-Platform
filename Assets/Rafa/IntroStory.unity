@@ -484,19 +484,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TypewriterEffect
   textComponent: {fileID: 1045119609}
-  fullText: "Zig nunca foi um vampiro comum.\r\nEnquanto os outros se contentavam
-    com castelos silenciosos e noites eternas, Zig s\xF3 via t\xE9dio.\n\rEle queria
-    mais.  \r\nQueria aventura.\r\nCansado de suas reclama\xE7\xF5es, Dr\xE1cula,
-    o enigm\xE1tico mago dos vampiros, decidiu atender seu desejo...\r\nMas n\xE3o
-    da forma que ele esperava.\r\nCom um \xFAnico gesto, um portal foi aberto, e
-    Zig foi lan\xE7ado na Terra M\xE9dia.\r\nUm mundo vasto, perigoso e imprevis\xEDvel.\r\nCriaturas
-    sombrias espreitam por todos os lados.\r\nSlimes que se multiplicam sem controle.\r\nOrcs
-    brutais que vivem para a batalha.\r\nE no cora\xE7\xE3o desse caos...\r\nR\xF4ndon.\r\nUma
-    criatura colossal, colocada ali pelo pr\xF3prio Dr\xE1cula.\r\nN\xE3o como puni\xE7\xE3o.\r\nMas
-    como prova.\r\nAgora, Zig precisa atravessar esse mundo, derrotar seus guardi\xF5es
-    e reunir os fragmentos do portal para encontrar o caminho de volta.\r\nMas talvez...
-    o verdadeiro desafio n\xE3o seja voltar para casa.\r\nE sim descobrir se ele
-    ainda quer voltar."
+  fullText: "Zig nunca foi um vampiro comum.\r\nEnquanto outros aceitavam a escurid\xE3o
+    eterna,\r\nZig s\xF3 via t\xE9dio.\r\nEle queria mais.\r\nQueria aventura.\r\nCansado
+    de suas reclama\xE7\xF5es, Dr\xE1cula decidiu agir...\r\nCom um gesto, abriu
+    um portal e lan\xE7ou Zig na Terra M\xE9dia.\r\nUm mundo perigoso e imprevis\xEDvel.\r\nSlimes
+    se multiplicam sem controle.\r\nOrcs vivem para a batalha.\r\nE no cora\xE7\xE3o
+    desse caos...\r\nR\xF4ndon.\r\nUma criatura colossal, colocada ali como prova.\r\nAgora,
+    Zig deve atravessar esse mundo, derrotar seus guardi\xF5es e encontrar o caminho
+    de volta.\r\nMas talvez ... o verdadeiro desafio n\xE3o seja voltar.\r\nE sim
+    decidir se ele realmente quer voltar."
   speed: 0.05
 --- !u!1 &1045119608
 GameObject:
