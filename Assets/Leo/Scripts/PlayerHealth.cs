@@ -18,6 +18,32 @@ public class PlayerHealth : MonoBehaviour
     {
         playerAnimator = GetComponent<PlayerAnimator>();
         currentHearts = maxHearts;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Regiao1")
+        {
+            currentHearts = maxHearts;
+            isDead = false;
+            isInvincible = false;
+            playerAnimator.SetHurt(false);
+            playerAnimator.SetDead(false);
+            GetComponent<PlayerMovement>().enabled = true;
+            GetComponent<PlayerAttack>().enabled = true;
+        }
+
+        if (scene.name == "GameOver" || scene.name == "MainMenu")
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Destroy(gameObject);
+        }
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void TakeDamage(int damage)
