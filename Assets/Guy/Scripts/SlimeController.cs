@@ -83,11 +83,22 @@ public class SlimeController : MonoBehaviour
             Die();
     }
 
+    private SlimeSpawner spawner;
+    
+    public void SetSpawner(SlimeSpawner s)
+    {
+        spawner = s;
+    }
+    
     void Die()
     {
         isDead = true;
         rb.linearVelocity = Vector2.zero;
         animator.SetTrigger("isDead");
+    
+        if (spawner != null)
+            spawner.OnSlimeDied();
+    
         Destroy(gameObject, 1.5f);
     }
 }
