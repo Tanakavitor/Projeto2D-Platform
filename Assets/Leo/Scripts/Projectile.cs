@@ -18,6 +18,10 @@ public class Projectile : MonoBehaviour
             if (slime != null)
                 slime.TakeDamage(damage);
 
+            OrcController orc = other.GetComponent<OrcController>();
+            if (orc != null)
+                orc.TakeDamage(damage);
+
             Destroy(gameObject);
         }
     }

@@ -119,6 +119,58 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &21360155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 21360157}
+  - component: {fileID: 21360156}
+  m_Layer: 0
+  m_Name: OrcSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &21360156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21360155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca84ad552e82ddf7a1d419b8d81a23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrcSpawner
+  orcPrefab: {fileID: 7362368301480927072, guid: 4e12595931b2f9d2090c28f0d1125535, type: 3}
+  totalOrcs: 6
+  spawnInterval: 3
+  portalPiece: {fileID: 2137967896}
+  minX: -7
+  maxX: 7
+  minY: -4
+  maxY: 4
+--- !u!4 &21360157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21360155}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.41653, y: 11.74541, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200900990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,16 +3369,20 @@ PrefabInstance:
       value: PortalPiece
       objectReference: {fileID: 0}
     - target: {fileID: 2647727983808360424, guid: e788ff4a0b9c061e5b93e0d002797050, type: 3}
+      propertyPath: isFinal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647727983808360424, guid: e788ff4a0b9c061e5b93e0d002797050, type: 3}
       propertyPath: nextScene
       value: Regiao3
       objectReference: {fileID: 0}
     - target: {fileID: 4789700000707312961, guid: e788ff4a0b9c061e5b93e0d002797050, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.69
+      value: 5.21
       objectReference: {fileID: 0}
     - target: {fileID: 4789700000707312961, guid: e788ff4a0b9c061e5b93e0d002797050, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4789700000707312961, guid: e788ff4a0b9c061e5b93e0d002797050, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3414,6 +3470,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2137967896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2175411645523829666, guid: e788ff4a0b9c061e5b93e0d002797050, type: 3}
+  m_PrefabInstance: {fileID: 2068582931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3429,3 +3490,4 @@ SceneRoots:
   - {fileID: 957120511}
   - {fileID: 2068582931}
   - {fileID: 1532552577}
+  - {fileID: 21360157}
