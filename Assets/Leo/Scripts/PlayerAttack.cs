@@ -38,6 +38,10 @@ public class PlayerAttack : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * projectileSpeed;
 
+        // Rotaciona o projétil na direção do movimento
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+
         playerAnimator.SetAttacking(true);
         attackCooldownTimer = attackCooldown;
     }
