@@ -22,6 +22,10 @@ public class Projectile : MonoBehaviour
             if (orc != null)
                 orc.TakeDamage(damage);
 
+            RondonController rondon = other.GetComponent<RondonController>();
+            if (rondon != null)
+                rondon.TakeDamage(damage);
+
             Destroy(gameObject);
         }
     }
