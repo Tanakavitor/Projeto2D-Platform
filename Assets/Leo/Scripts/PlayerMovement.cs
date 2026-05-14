@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+    public bool IsDashing => isDashing;
 
     void Awake()
     {

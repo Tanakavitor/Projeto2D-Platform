@@ -49,6 +49,9 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (isDead || isInvincible) return;
+        
+        PlayerMovement movement = GetComponent<PlayerMovement>();
+        if (movement != null && movement.IsDashing) return;
 
         currentHearts -= damage;
 
