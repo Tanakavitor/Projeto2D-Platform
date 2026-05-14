@@ -6,6 +6,7 @@ public class PauseManager : MonoBehaviour
     public static PauseManager Instance;
     public GameObject pausePanel;
     private bool isPaused = false;
+    public UnityEngine.UI.Button muteButton;
 
     void Awake()
     {
@@ -52,5 +53,16 @@ public class PauseManager : MonoBehaviour
         Instance = null;
         Destroy(gameObject);
         SceneManager.LoadScene("MainMenu");
+    }
+    
+    private bool isMuted = false;
+
+    public void ToggleMute()
+    {
+        isMuted = !isMuted;
+        AudioListener.volume = isMuted ? 0f : 1f;
+    
+        // Atualiza o texto do botao
+        muteButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = isMuted ? "Desmutar" : "Mutar";
     }
 }
