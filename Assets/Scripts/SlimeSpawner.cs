@@ -6,12 +6,13 @@ public class SlimeSpawner : MonoBehaviour
     public int totalSlimes = 10;
     public float spawnInterval = 2f;
     public GameObject portalPiece;
+    public AudioClip portalSound;
 
     private int slimesSpawned = 0;
     private int slimesAlive = 0;
     private float spawnTimer = 0f;
+    private AudioSource audioSource;
 
-    // Define os limites do mapa para spawn aleatorio
     public float minX = -8f;
     public float maxX = 8f;
     public float minY = -4f;
@@ -19,6 +20,7 @@ public class SlimeSpawner : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         portalPiece.SetActive(false);
     }
 
@@ -51,6 +53,10 @@ public class SlimeSpawner : MonoBehaviour
     {
         slimesAlive--;
         if (slimesSpawned >= totalSlimes && slimesAlive <= 0)
+        {
+            if (audioSource != null && portalSound != null)
+                audioSource.PlayOneShot(portalSound);
             portalPiece.SetActive(true);
+        }
     }
 }

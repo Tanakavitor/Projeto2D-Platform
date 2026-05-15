@@ -6,10 +6,12 @@ public class OrcSpawner : MonoBehaviour
     public int totalOrcs = 8;
     public float spawnInterval = 3f;
     public GameObject portalPiece;
+    public AudioClip portalSound;
 
     private int orcsSpawned = 0;
     private int orcsAlive = 0;
     private float spawnTimer = 0f;
+    private AudioSource audioSource;
 
     public float minX = -7f;
     public float maxX = 7f;
@@ -18,6 +20,7 @@ public class OrcSpawner : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         portalPiece.SetActive(false);
     }
 
@@ -50,6 +53,10 @@ public class OrcSpawner : MonoBehaviour
     {
         orcsAlive--;
         if (orcsSpawned >= totalOrcs && orcsAlive <= 0)
+        {
+            if (audioSource != null && portalSound != null)
+                audioSource.PlayOneShot(portalSound);
             portalPiece.SetActive(true);
+        }
     }
 }

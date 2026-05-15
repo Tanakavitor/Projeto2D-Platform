@@ -7,12 +7,17 @@ public class PlayerAttack : MonoBehaviour
     public float projectileSpeed = 10f;
     public float attackCooldown = 0.5f;
 
+    [Header("Audio")]
+    public AudioClip attackSound;
+    private AudioSource audioSource;
+
     private float attackCooldownTimer = 0f;
     private PlayerAnimator playerAnimator;
 
     void Awake()
     {
         playerAnimator = GetComponent<PlayerAnimator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -24,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
                 playerAnimator.SetAttacking(false);
         }
 
-        if (Time.timeScale == 0f) return; // bloqueado se pausado
+        if (Time.timeScale == 0f) return;
 
         if (Input.GetMouseButtonDown(0) && attackCooldownTimer <= 0)
             Shoot();
@@ -38,9 +43,11 @@ public class PlayerAttack : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * projectileSpeed;
 
-        // Rotaciona o projétil na direção do movimento
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        if (audioSource != null && attackSound != null)
+            audioSource.PlayOneShot(attackSound);
 
         playerAnimator.SetAttacking(true);
         attackCooldownTimer = attackCooldown;
