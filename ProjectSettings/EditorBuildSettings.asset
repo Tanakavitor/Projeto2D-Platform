@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Regi\xF5es/Regi\xE3o3/Regiao3.unity"
     guid: 5d5a8e2b4591418f0a7f1768200d1a47
+  - enabled: 1
+    path: Assets/Rafa/IntroStory.unity
+    guid: f01699b72669b5e48b60ef1811a796c8
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

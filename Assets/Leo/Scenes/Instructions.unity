@@ -247,8 +247,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shift Esquerdo para dar o DASH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
+  m_sharedMaterial: {fileID: -3361425889872080955, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -496,8 +496,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Mire com o Cursor do Mouse, e atire com o bot\xE3o direito"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
+  m_sharedMaterial: {fileID: -3361425889872080955, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -633,8 +633,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Esc para voltar ao Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
+  m_sharedMaterial: {fileID: -3361425889872080955, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -770,8 +770,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: use W/A/S/D para se movientar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
+  m_sharedMaterial: {fileID: -3361425889872080955, guid: aab576f1a17727d47a512d2d31327e09, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

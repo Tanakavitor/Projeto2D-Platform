@@ -5,7 +5,7 @@ public class MainMenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Regiao1");
+        SceneManager.LoadScene("IntroStory");
     }
 
     public void GoToTutorial()
