@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroyPlayer : MonoBehaviour
 {
@@ -10,17 +11,28 @@ public class DontDestroyPlayer : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            Debug.Log("Player criado e persistindo");
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
-            Debug.Log("Duplicata destruida");
+            Destroy(gameObject);
+        }
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu" || scene.name == "Instructions" ||
+            scene.name == "GameOver" || scene.name == "Victory" ||
+            scene.name == "IntroStory")
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            instance = null;
             Destroy(gameObject);
         }
     }
 
     void OnDestroy()
     {
-        Debug.Log("Player destruido!");
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

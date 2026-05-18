@@ -21,9 +21,12 @@ public class DontDestroyCanvas : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Victory" || scene.name == "MainMenu" || scene.name == "GameOver")
+        if (scene.name == "Victory" || scene.name == "MainMenu" || 
+            scene.name == "GameOver" || scene.name == "Instructions" || 
+            scene.name == "IntroStory")
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            instance = null;
             Destroy(gameObject);
         }
     }
