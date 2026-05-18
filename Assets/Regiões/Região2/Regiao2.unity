@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrcSpawner
   orcPrefab: {fileID: 7362368301480927072, guid: 4e12595931b2f9d2090c28f0d1125535, type: 3}
-  totalOrcs: 6
+  totalOrcs: 8
   spawnInterval: 3
   portalPiece: {fileID: 2137967896}
   portalSound: {fileID: 8300000, guid: 534bb8c7aae5a8ed08d83fbc51abc157, type: 3}
