@@ -16,23 +16,39 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastMoveDirection = Vector2.down;
 
     private bool isDashing = false;
+    public Vector2 LastMoveDirection => lastMoveDirection;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+
+    private VirtualJoystick joystick;
+
     public bool IsDashing => isDashing;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<PlayerAnimator>();
+        joystick = FindObjectOfType<VirtualJoystick>();
     }
 
     void Update()
     {
-        if (Time.timeScale == 0f) return; // bloqueado se pausado
-        
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-        moveInput.Normalize();
+        // Input do teclado
+        Vector2 keyboardInput = Vector2.zero;
+        keyboardInput.x = Input.GetAxisRaw("Horizontal");
+        keyboardInput.y = Input.GetAxisRaw("Vertical");
+        keyboardInput.Normalize();
+
+        // Input do joystick virtual
+        Vector2 joystickInput = Vector2.zero;
+        if (joystick != null)
+            joystickInput = joystick.InputDirection;
+
+        // Usa o que tiver sendo usado
+        if (joystickInput.magnitude > 0.1f)
+            moveInput = joystickInput;
+        else
+            moveInput = keyboardInput;
 
         if (moveInput != Vector2.zero)
             lastMoveDirection = moveInput;
@@ -53,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
     void FixedUpdate()
     {
         if (isDashing)
@@ -62,8 +77,9 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = moveInput * moveSpeed;
     }
 
-    void StartDash()
+    public void StartDash()
     {
+        if (isDashing || dashCooldownTimer > 0) return;
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;

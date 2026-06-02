@@ -13,11 +13,13 @@ public class PlayerAttack : MonoBehaviour
 
     private float attackCooldownTimer = 0f;
     private PlayerAnimator playerAnimator;
+    private PlayerMovement playerMovement;
 
     void Awake()
     {
         playerAnimator = GetComponent<PlayerAnimator>();
         audioSource = GetComponent<AudioSource>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -40,6 +42,22 @@ public class PlayerAttack : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mousePos - transform.position).normalized;
 
+        FireProjectile(direction);
+    }
+
+    public void MobileShoot()
+    {
+        if (attackCooldownTimer > 0) return;
+        if (Time.timeScale == 0f) return;
+
+        // Atira na ultima direcao que o jogador estava se movendo
+        Vector2 direction = playerMovement != null ? playerMovement.LastMoveDirection : Vector2.down;
+
+        FireProjectile(direction);
+    }
+
+    void FireProjectile(Vector2 direction)
+    {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * projectileSpeed;
 
