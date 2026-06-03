@@ -1,6 +1,6 @@
 # Zig & the Middle Earth
 
-Jogo top-down 2D desenvolvido em Unity 6 como projeto da disciplina Jogos e Interação - Insper 2026.1.
+Jogo top-down 2D desenvolvido em Unity 6 como projeto da disciplina Jogos e Interação - Insper 2026.1. Disponível para PC (WebGL) e Android.
 
 ## Sobre o Jogo
 
@@ -8,11 +8,18 @@ Zig é um jovem vampiro entediado com a monotonia do mundo dos vampiros. Drácul
 
 ## Como Jogar
 
+### PC
 - **WASD** - Movimentar o personagem
 - **Shift Esquerdo** - Dash (invencível durante o dash)
 - **Botão esquerdo do mouse** - Atirar projétil na direção do cursor
 - **ESC** - Pausar o jogo
 - **Enter / Espaço** - Pular a introdução
+
+### Mobile (Android)
+- **Joystick virtual** (canto inferior esquerdo) - Movimentar o personagem
+- **Botão Atacar** (canto inferior direito) - Atirar na direção do movimento
+- **Botão Dash** (canto inferior direito) - Dash (invencível durante o dash)
+- **Botão II** (canto superior direito) - Pausar o jogo
 
 ## Equipe
 
